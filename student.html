@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration | CEP</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f5ff;
+            color: #26324b;
+            margin: 0;
+            padding: 25px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 25px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #263f9120;
+        }
+
+        h1 {
+            text-align: center;
+            color: #263f91;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccd4e5;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 24px;
+            padding: 13px;
+            background: #263f91;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #18254b;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #263f91;
+        }
+
+        #message {
+            color: #176b3a;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Student Registration</h1>
+
+        <p>
+            Coding Awareness Program for School Children
+        </p>
+
+        <form id="studentForm">
+
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName"
+                   placeholder="Enter full name" required>
+
+            <label for="className">Class / Standard</label>
+            <select id="className" required>
+                <option value="">Select your class</option>
+                <option>Class 5</option>
+                <option>Class 6</option>
+                <option>Class 7</option>
+                <option>Class 8</option>
+                <option>Class 9</option>
+                <option>Class 10</option>
+            </select>
+
+            <label for="schoolName">School Name</label>
+            <input type="text" id="schoolName"
+                   placeholder="Enter school name" required>
+
+            <label for="email">Email (optional)</label>
+            <input type="email" id="email"
+                   placeholder="Enter email address">
+
+            <label for="interest">Are you interested in learning coding?</label>
+            <select id="interest" required>
+                <option value="">Select an option</option>
+                <option>Yes, very interested</option>
+                <option>Somewhat interested</option>
+                <option>I want to learn more first</option>
+            </select>
+
+            <label for="comments">What would you like to learn?</label>
+            <textarea id="comments" rows="3"
+                      placeholder="Games, animation, coding basics..."></textarea>
+
+            <button type="submit">Register</button>
+
+            <p id="message" role="status"></p>
+        </form>
+
+        <a class="back" href="index.html">
+            ← Back to Home
+        </a>
+    </div>
+
+    <script>
+        document.getElementById("studentForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                document.getElementById("message").textContent =
+                    "Thank you! Your form was completed successfully.";
+
+                this.reset();
+            });
+    </script>
+
+</body>
+</html>
